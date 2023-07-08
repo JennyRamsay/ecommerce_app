@@ -1,16 +1,15 @@
-import React from 'react'
-import { Link } from "react-router-dom";
 
 const Item = ({ product }) => {
 
+  if (!product){
+    return <p>Loading...</p>
+  }
+
   return (
     <>
-      <Link to={`/products/${product.id}`}>
-        <h1>Product Details</h1>
-        <p>{product.title}</p>
-      </Link>    
-  </>
+      <h1>Anyone there?</h1>
+    </>
   )
-}
+};
 
 export default Item;

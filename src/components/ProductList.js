@@ -1,18 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const ProductList = ({ products }) => {
     
   const listItems = products.map((product, index) => {
-    return <li key={index}>{product.title}: £{product.price}</li>
+    return <li key={index}><Link to={`/products/${product.id}`}>
+    {product.title}</Link>: £{product.price}<button>Details</button></li>
   })
 
   return (
     <div>
-      <h4>Products</h4>
+      <h4>Product Details</h4>
       <ul>
-        { listItems }
+        { listItems }  
       </ul>
+      
+      
     </div>
   )
 };
